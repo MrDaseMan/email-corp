@@ -2,29 +2,25 @@ package org.itmolab.emailcorp.classses;
 
 import java.time.LocalDate;
 
+import org.itmolab.emailcorp.classses.Employee;
+
 public class Message {
     private int id;
-    private int sender;
-    private int receiver;
+    private Employee sender;
     private String content;
     private LocalDate sentAt;
 
     private static int idCounter = 0;
 
-    public Message(int sender, int receiver, String content) {
+    public Message(Employee sender, String content) {
         this.id = generateId();
         this.sender = sender;
-        this.receiver = receiver;
         this.content = content;
         this.sentAt = LocalDate.now();
     }
 
-    public int getSenderID() {
+    public Employee getSender() {
         return sender;
-    }
-
-    public int getReceiverID() {
-        return receiver;
     }
 
     public String getContent() {

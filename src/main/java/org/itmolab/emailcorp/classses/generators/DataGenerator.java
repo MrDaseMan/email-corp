@@ -16,7 +16,7 @@ import org.itmolab.emailcorp.classses.Employee;
 import java.util.Random;
 
 public class DataGenerator {
-    public static Company[] generateAllData(int numEmployees, int numMessages, int numCompanies, int numMessagesPerEmployee) {
+    public static Company[] generateAllData(int numEmployees, int numCompanies, int numMessagesPerEmployee) {
         // array of companies
         Company allData[] = new Company[numCompanies];
 
@@ -25,7 +25,7 @@ public class DataGenerator {
         // Generate companies
         CompanyGenerator companyGenerator = new CompanyGenerator();
         for (int i = 0; i < numCompanies; i++) {
-            Company company = companyGenerator.generateCompany(numEmployees, numMessages, numMessagesPerEmployee);
+            Company company = companyGenerator.generateCompany(numEmployees, numMessagesPerEmployee);
             allData[i] = company;
         }
 

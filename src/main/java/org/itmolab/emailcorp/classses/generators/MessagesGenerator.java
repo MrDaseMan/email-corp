@@ -14,8 +14,8 @@ public class MessagesGenerator {
         faker = new Faker();
     }
 
-    public Message generateMessage(int sender, int receiver) {
+    public Message generateMessage(Employee sender) {
         String text = faker.lorem().sentence();
-        return new Message(sender, receiver, text);
+        return new Message(sender, text);
     }
 }

@@ -9,6 +9,8 @@ import com.github.javafaker.Faker;
 import org.itmolab.emailcorp.classses.additional.Department;
 import org.itmolab.emailcorp.classses.additional.Position;
 
+import org.itmolab.emailcorp.classses.Message;
+
 public class Employee {
     private int id;
     private String name;
@@ -16,6 +18,7 @@ public class Employee {
     private Date birthDate;
     private Department department;
     private Position position;
+    private List<Message> inbox;
 
     private static int idCounter = 0;
 
@@ -26,6 +29,19 @@ public class Employee {
         this.birthDate = birthDate;
         this.department = department;
         this.position = position;
+        this.inbox = new ArrayList<>();
+    }
+
+    public List<Message> getMessages() {
+        return inbox;
+    }
+
+    public void setMessages(List<Message> inbox) {
+        this.inbox = inbox;
+    }
+
+    public void pushMessages(List<Message> inbox) {
+        this.inbox.addAll(inbox);
     }
 
     public int getId() {

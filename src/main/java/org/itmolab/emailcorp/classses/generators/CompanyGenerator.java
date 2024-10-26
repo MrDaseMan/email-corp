@@ -14,6 +14,8 @@ import org.itmolab.emailcorp.classses.generators.EmployeeGenerator;
 import org.itmolab.emailcorp.classses.Message;
 import org.itmolab.emailcorp.classses.generators.MessagesGenerator;
 
+import java.lang.System;
+
 public class CompanyGenerator {
     private Faker faker;
     private Random random;
@@ -23,7 +25,7 @@ public class CompanyGenerator {
         random = new Random();
     }
 
-    public Company generateCompany( int numEmployees, int numMessages, int numMaxMessagesPerEmployee ) {
+    public Company generateCompany( int numEmployees, int numMaxMessagesPerEmployee ) {
         String name = faker.company().name();
 
         Company company = new Company(name);
@@ -40,14 +42,18 @@ public class CompanyGenerator {
         for (Employee employee : company.getEmployees()) {
             List<Message> messages = new ArrayList<>();
             for (int i = 0; i < random.nextInt(numMaxMessagesPerEmployee); i++) {
-                int reciver = random.nextInt(numEmployees);
-                if (reciver == employee.getId()) {
-                    reciver = (reciver + 1) % numEmployees;
+                // get random sender
+                Employee sender = company.getEmployees().get(random.nextInt(company.getEmployees().size()));
+
+                if (sender.getId() == employee.getId()) {
+                    continue;
                 }
-                Message message = messagesGenerator.generateMessage(employee.getId(), reciver);
+
+                Message message = messagesGenerator.generateMessage(sender);
                 messages.add(message);
             }
-            company.pushMessages(messages);
+
+            employee.pushMessages(messages);
         }
 
         return company;
