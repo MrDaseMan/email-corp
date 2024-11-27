@@ -1,19 +1,8 @@
 package org.itmolab.emailcorp.classses.generators;
 
-import com.github.javafaker.Faker;
-
-import java.util.ArrayList;
-import java.util.List;
 import java.util.Random;
-
-import org.itmolab.emailcorp.classses.generators.CompanyGenerator;
-import org.itmolab.emailcorp.classses.generators.EmployeeGenerator;
 
 import org.itmolab.emailcorp.classses.Company;
-import org.itmolab.emailcorp.classses.Employee;
-
-// rand
-import java.util.Random;
 
 public class DataGenerator {
     public static Company[] generateAllData(int numEmployees, int numCompanies, int numMessagesPerEmployee) {

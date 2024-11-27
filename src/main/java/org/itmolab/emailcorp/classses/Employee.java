@@ -1,15 +1,11 @@
 package org.itmolab.emailcorp.classses;
 
-import java.util.Date;
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
-
-import com.github.javafaker.Faker;
 
 import org.itmolab.emailcorp.classses.additional.Department;
 import org.itmolab.emailcorp.classses.additional.Position;
-
-import org.itmolab.emailcorp.classses.Message;
 
 public class Employee {
     private int id;
@@ -42,6 +38,10 @@ public class Employee {
 
     public void pushMessages(List<Message> inbox) {
         this.inbox.addAll(inbox);
+    }
+
+    public void addMessage(Message message) {
+        this.inbox.add(message);
     }
 
     public int getId() {

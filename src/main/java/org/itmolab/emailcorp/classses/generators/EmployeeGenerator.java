@@ -1,16 +1,12 @@
 package org.itmolab.emailcorp.classses.generators;
 
-import com.github.javafaker.Faker;
+import java.util.Date;
 
-import org.itmolab.emailcorp.classses.Company;
 import org.itmolab.emailcorp.classses.Employee;
 import org.itmolab.emailcorp.classses.additional.Department;
 import org.itmolab.emailcorp.classses.additional.Position;
-import org.itmolab.emailcorp.classses.Message;
 
-import java.util.Date;
-import java.util.ArrayList;
-import java.util.List;
+import com.github.javafaker.Faker;
 
 public class EmployeeGenerator {
     private Faker faker;

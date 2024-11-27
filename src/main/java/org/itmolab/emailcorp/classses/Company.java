@@ -16,6 +16,11 @@ public class Company {
         this.employees = new ArrayList<>();
     }
 
+    public Company(String name, List<Employee> employees) {
+        this.name = name;
+        this.employees = new ArrayList<>(employees);
+    }
+
     public void addEmployee(Employee employee) {
         this.employees.add(employee);
     }

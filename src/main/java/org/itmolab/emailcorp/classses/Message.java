@@ -2,9 +2,8 @@ package org.itmolab.emailcorp.classses;
 
 import java.time.LocalDate;
 
-import org.itmolab.emailcorp.classses.Employee;
-
 public class Message {
+
     private int id;
     private Employee sender;
     private String content;
@@ -20,6 +19,17 @@ public class Message {
     }
 
     public Employee getSender() {
+        return getSender(0);
+    }
+
+    public Employee getSender(long delay) {
+        if (delay > 0) {
+            try {
+                Thread.sleep(delay);
+            } catch (InterruptedException e) {
+                Thread.currentThread().interrupt();
+            }
+        }
         return sender;
     }
 
