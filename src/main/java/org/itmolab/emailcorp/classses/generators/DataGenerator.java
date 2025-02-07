@@ -5,6 +5,7 @@ import java.util.Random;
 import org.itmolab.emailcorp.classses.Company;
 
 public class DataGenerator {
+
     public static Company[] generateAllData(int numEmployees, int numCompanies, int numMessagesPerEmployee) {
         // array of companies
         Company allData[] = new Company[numCompanies];

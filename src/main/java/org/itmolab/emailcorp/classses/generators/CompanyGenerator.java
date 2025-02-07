@@ -1,22 +1,17 @@
 package org.itmolab.emailcorp.classses.generators;
 
-import com.github.javafaker.Faker;
-
-import org.itmolab.emailcorp.classses.Company;
-
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Random;
 
+import org.itmolab.emailcorp.classses.Company;
 import org.itmolab.emailcorp.classses.Employee;
-import org.itmolab.emailcorp.classses.generators.EmployeeGenerator;
-
 import org.itmolab.emailcorp.classses.Message;
-import org.itmolab.emailcorp.classses.generators.MessagesGenerator;
 
-import java.lang.System;
+import com.github.javafaker.Faker;
 
 public class CompanyGenerator {
+
     private Faker faker;
     private Random random;
 
@@ -25,7 +20,7 @@ public class CompanyGenerator {
         random = new Random();
     }
 
-    public Company generateCompany( int numEmployees, int numMaxMessagesPerEmployee ) {
+    public Company generateCompany(int numEmployees, int numMaxMessagesPerEmployee) {
         String name = faker.company().name();
 
         Company company = new Company(name);

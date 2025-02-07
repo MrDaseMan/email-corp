@@ -3,11 +3,8 @@ package org.itmolab.emailcorp.classses;
 import java.util.ArrayList;
 import java.util.List;
 
-import org.itmolab.emailcorp.classses.Employee;
-
-import com.github.javafaker.Faker;
-
 public class Company {
+
     private String name;
     private List<Employee> employees;
 

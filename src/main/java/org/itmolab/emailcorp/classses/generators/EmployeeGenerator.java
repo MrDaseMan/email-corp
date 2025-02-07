@@ -9,6 +9,7 @@ import org.itmolab.emailcorp.classses.additional.Position;
 import com.github.javafaker.Faker;
 
 public class EmployeeGenerator {
+
     private Faker faker;
 
     public EmployeeGenerator() {
@@ -25,7 +26,7 @@ public class EmployeeGenerator {
         if (maxMessageCount == 0) {
             maxMessageCount = 10;
         }
-        
+
         // if minMessageCount is greater than maxMessageCount, swap them
         if (minMessageCount > maxMessageCount) {
             int temp = minMessageCount;

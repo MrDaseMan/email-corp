@@ -1,21 +1,15 @@
 package org.itmolab.emailcorp.classses.collectors;
 
+import java.util.Collections;
+import java.util.HashMap;
+import java.util.Map;
+import java.util.Set;
 import java.util.function.BiConsumer;
 import java.util.function.BinaryOperator;
 import java.util.function.Function;
 import java.util.function.Supplier;
-import java.util.stream.Collectors;
-import java.util.Collections;
-import java.util.Set;
-import java.util.stream.Stream;
-import java.util.Map;
-import java.io.IOException;
 import java.util.stream.Collector;
-import java.util.List;
-import java.util.HashMap;
-import java.io.FileWriter;
 
-import org.itmolab.emailcorp.classses.Employee;
 import org.itmolab.emailcorp.classses.Message;
 
 public class SendedMessagesCollector implements Collector<Message, Map<Integer, Long>, Map<Integer, Long>> {

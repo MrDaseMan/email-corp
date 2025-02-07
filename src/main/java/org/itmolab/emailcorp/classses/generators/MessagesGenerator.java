@@ -1,10 +1,9 @@
 package org.itmolab.emailcorp.classses.generators;
 
-import com.github.javafaker.Faker;
-
-import org.itmolab.emailcorp.classses.Company;
 import org.itmolab.emailcorp.classses.Employee;
 import org.itmolab.emailcorp.classses.Message;
+
+import com.github.javafaker.Faker;
 
 public class MessagesGenerator {
 

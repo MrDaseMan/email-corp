@@ -8,6 +8,7 @@ import org.itmolab.emailcorp.classses.additional.Department;
 import org.itmolab.emailcorp.classses.additional.Position;
 
 public class Employee {
+
     private int id;
     private String name;
     private String email;

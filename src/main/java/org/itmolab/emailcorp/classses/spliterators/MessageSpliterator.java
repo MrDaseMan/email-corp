@@ -1,13 +1,14 @@
 package org.itmolab.emailcorp.classses.spliterators;
 
-import org.itmolab.emailcorp.classses.Message;
-import org.itmolab.emailcorp.classses.Employee;
-
+import java.util.List;
 import java.util.Spliterator;
 import java.util.function.Consumer;
-import java.util.List;
+
+import org.itmolab.emailcorp.classses.Employee;
+import org.itmolab.emailcorp.classses.Message;
 
 public class MessageSpliterator implements Spliterator<Message> {
+
     private final List<Employee> employees;
     private int employeeIndex;
     private int messageIndex;
@@ -37,13 +38,13 @@ public class MessageSpliterator implements Spliterator<Message> {
         while (employeeIndex < employees.size()) {
             Employee employee = employees.get(employeeIndex);
             List<Message> messages = employee.getMessages();
-            
+
             if (messageIndex < messages.size()) {
                 action.accept(messages.get(messageIndex++));
                 estimateSize--;
                 return true;
             }
-            
+
             employeeIndex++;
             messageIndex = 0;
         }
@@ -74,20 +75,20 @@ public class MessageSpliterator implements Spliterator<Message> {
                 splitEmployeeIndex++;
                 splitMessageIndex = 0;
             } else {
-                splitMessageIndex += (int)(targetSize - count);
+                splitMessageIndex += (int) (targetSize - count);
                 break;
             }
         }
 
         // Если не удалось найти точку разделения
-        if (splitEmployeeIndex >= employees.size() || 
-            (splitEmployeeIndex == employeeIndex && splitMessageIndex == messageIndex)) {
+        if (splitEmployeeIndex >= employees.size()
+                || (splitEmployeeIndex == employeeIndex && splitMessageIndex == messageIndex)) {
             return null;
         }
 
         // Создаем новый сплитератор для первой половины
         MessageSpliterator newSpliterator = new MessageSpliterator(
-            employees, employeeIndex, messageIndex, targetSize
+                employees, employeeIndex, messageIndex, targetSize
         );
 
         // Обновляем текущий сплитератор для второй половины
